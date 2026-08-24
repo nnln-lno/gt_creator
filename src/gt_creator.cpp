@@ -6,7 +6,7 @@ using std::placeholders::_1;
 
 namespace navigation {
 gtCreator::gtCreator() : Node("gt_creator_node") {
-  this->declare_parameter("anchor_id_lists", std::vector<int>{});
+  this->declare_parameter("gt_anchor_id_lists", std::vector<int>{});
   this->declare_parameter("anchor_pos_x", std::vector<double>{0.0, 0.0, 0.0});
   this->declare_parameter("anchor_pos_y", std::vector<double>{0.0, 0.0, 0.0});
   this->declare_parameter("anchor_pos_z", std::vector<double>{0.0, 0.0, 0.0});
