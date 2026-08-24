@@ -99,7 +99,7 @@ void gtCreator::multilateration(
 
       opt_pos = (A.transpose() * A).inverse() * A.transpose() * B;
 
-      std::cout << opt_pos.transpose() << std::endl;
+      std::cout << "Pseudo Position : " << opt_pos.transpose() << std::endl;
 
       gt_estimated_position_.header.frame_id = "map";
       gt_estimated_position_.header.stamp = this->get_clock()->now();
@@ -155,8 +155,9 @@ void gtCreator::multilateration(
             gt_estimated_position_.point.z = opt_pos.z();
 
             gt_position_publisher_->publish(gt_estimated_position_);
-            // std::cout << "Estimated Pos : " << opt_pos.x() << ", " <<
-            // opt_pos.y() << ", " << opt_pos.z() << std::endl;
+
+            std::cout << "Pseudo Position : " << opt_pos.transpose() << std::endl;
+            
             return;
           }
 
